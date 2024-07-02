@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Image Change</title>
+    <!-- <link rel = "stylesheet" href = "./assets/css/style-prefix.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: 'Roboto', sans-serif;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+.main-wrapper{
+    min-height: 70vh;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+.product-div{
+    margin: 1rem 0;
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    border-radius: 3px;
+    column-gap: 10px;
+}
+.product-div-left{
+    padding: 20px;
+}
+.product-div-right{
+    padding: 20px;
+}
+.img-container img{
+    width: 350px;
+    margin: 0 auto;
+}
+.hover-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+.hover-container div{
+    border: 2px solid rgba(252, 160, 175, 0.7);
+    padding: 1rem;
+    border-radius: 3px;
+    margin: 0 4px 8px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.active{
+    border-color: rgb(255, 145, 163)!important;
+}
+.hover-container div:hover{
+    border-color: rgb(255, 145, 163);
+}
+.hover-container div img{
+    width: 50px;
+    cursor: pointer;
+}
+.product-div-right span{
+    display: block;
+}
+.product-name{
+    font-size: 26px;
+    margin-bottom: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    color: #333333;
+    text-transform: uppercase;
+}
+.product-price{
+    font-weight: 700;
+    font-size: 34px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+.product-rating{
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+.product-rating span{
+    margin-right: 6px;
+}
+.product-description{
+    font-weight: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-top: 22px;
+}
+
+.btn-groups input {
+    border: 1.5px solid #ddd;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    height: 55px;
+    width: 120px;
+}
+
+.btn-groups{
+    margin-top: 100px;
+}
+.btn-groups button{
+    display: inline-block;
+    font-size: 13px;
+    font-family: inherit;
+    text-transform: uppercase;
+    padding: 9px 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    border-radius: 40px;
+}
+.btn-groups button .fas{
+    margin-right: 8px;
+
+}
+
+a .fas:hover {
+    color: #fff;
+}
+
+a img:hover {
+    color: #ffffff;
+}
+
+.top p :hover {
+    color: #ffffff;
+}
+.add-cart-btn{
+    background-color: #e27d60;
+    border: 2px solid #e27d60;
+    margin-right: 8px;
+    margin-left: 30px;
+}
+.add-cart-btn:hover{
+    background-color: #fff;
+    color: #e27d60;
+}
+.buy-now-btn{
+    background-color: #00eaa1;
+    border: 2px solid #00eaa1;
+    margin-left: 10px;
+}
+.buy-now-btn:hover{
+    background-color: #fff;
+    color: #00eaa1;
+}
+
+@media screen and (max-width: 992px){
+    .product-div{
+        grid-template-columns: 100%;
+    }
+    .product-div-right{
+        text-align: center;
+    }
+    .product-rating{
+        justify-content: center;
+    }
+    .product-description{
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .btn-groups button{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+    </style>
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <header style="justify-content: space-between; background-color: #000;"> -->
+
+        <div class="header-top" style="margin-top:-5px;margin-bottom: -1px; background-color: #1d1d1f;">
+
+            <div class="container" style="display: flex;">
+
+              <div class="logos" >
+                <ul class="top" style="display: flex; gap: 10px;">
+
+
+                  <li>
+                    <a href=""><img src="./assets/images/Wofend-Logo.svg" alt="Blue-ocean Logo" style="height: 27px; width: 31px; margin-top: 6px;" name="Wofend Group"></a>
+                  </li>
+
+                  <p style="color: #f5f5f7; font-size: 12px; font-family: 'Roboto Mono', monospace;  margin-top:10px ; text-decoration: none; ">Blue Ocean</p>
+
+                </ul>
+              </div>
+
+                <div class="menu1" style=" justify-content: space-around;">
+
+                <ul class="desktop-menu-list" style="margin-bottom:0; margin-top: 7px; display: flex; list-style: none; ">
+                    <li class="menu-category">
+                        <a href="#" class="menu-title" style="font-size:11px ; text-decoration: none; color: #fff; margin-left: 340px;">Wofend Group</a>
+                    </li>
+
+                    <a href="https://wofend.com/"><img src="./assets/images/Wofend-Logo.svg" alt="Wofend logo" style="width: 60px; height: 20px; margin-left: -18px; margin-top: 2px;"></a>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title" style="font-size:11px ;text-decoration: none; color: #fff; margin-left: 10px;">Contact us ☎️</a>
+                    </li>                    
+                    
+                    <li class="menu-category">
+                        <a href="#" class="menu-title" style="font-size:11px ;text-decoration: none; color: #fff; margin-left: 30px;">About us 👨🏻‍💻</a>
+                    </li>
+
+                </ul>
+                   </div>
+                   <a href="#" class="menu-title" style="color: rgb(180, 170, 170); margin: 9px 0 0 330px;"><i class="fas fa-shopping-bag"></i></a>
+                   <a href="#" class="menu-title" style="color: rgb(180, 170, 170); margin: 9px 0 0 30px;"><i class="fas fa-user"></i></a>
+            
+        </div>    
+            
+        </div>
+    
+    <!-- </header>     -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class = "main-wrapper">
+        <div class = "container">
+            <div class = "product-div">
+                <div class = "product-div-left">
+                    <div class = "img-container">
+                        <img src = "./assets/images/20ljar.png" alt = "watch">
+                    </div>
+                    <div class = "hover-container">
+                        <div><img src = "./assets/images/icons/jacket.svg"></div>
+                        <div><img src = "./assets/images/icons/hat.svg"></div>
+                        <div><img src = "./assets/images/icons/jewelry.svg"></div>
+                        <div><img src = "./assets/images/icons/shoes.svg"></div>
+                        <div><img src = "./assets/images/icons/shorts.svg"></div>
+                    </div>
+                </div>
+                <div class = "product-div-right">
+                    <span class = "product-name">Blue Ocean 20L Water Jar</span>
+                    <div class = "product-rating">
+                        <span style="color: hsl(29, 90%, 65%);"><i class = "fas fa-star"></i></span>
+                        <span style="color: hsl(29, 90%, 65%);"><i class = "fas fa-star"></i></span>
+                        <span style="color: hsl(29, 90%, 65%);"><i class = "fas fa-star"></i></span>
+                        <span style="color: hsl(29, 90%, 65%);"><i class = "fas fa-star"></i></span>
+                        <span style="color: hsl(29, 90%, 65%);"><i class = "fas fa-star-half-alt"></i></span>
+                        <span>(350 ratings)</span>
+                    </div>
+                    <br>
+                    <p class = "product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae animi ad minima veritatis dolore. Architecto facere dignissimos voluptate fugit ratione molestias quis quidem exercitationem voluptas.</p>
+                    <br>
+                    <del style="color: #333333;">₹ 45.00</del>
+                    <span class = "product-price" style="color: #333333;">₹ 30.00 /-</span>
+
+
+                    <p> Quantity :</p>
+                    <input type = "number" min = "1" value = "1">
+
+
+                    <div class = "btn-groups">
+                        <button type = "button" class = "add-cart-btn"><i class = "fas fa-shopping-bag"></i>add to bag</button>
+                        <button type = "button" class = "buy-now-btn"><i class = "fas fa-wallet"></i>buy now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <script>
+        
+        const allHoverImages = document.querySelectorAll('.hover-container div img');
+        const imgContainer = document.querySelector('.img-container');
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            allHoverImages[0].parentElement.classList.add('active');
+        });
+        
+        allHoverImages.forEach((image) => {
+            image.addEventListener('mouseover', () =>{
+                imgContainer.querySelector('img').src = image.src;
+                resetActiveImg();
+                image.parentElement.classList.add('active');
+            });
+        });
+        
+        function resetActiveImg(){
+            allHoverImages.forEach((img) => {
+                img.parentElement.classList.remove('active');
+            });
+        }
+            </script>
+</body>
+</html>
